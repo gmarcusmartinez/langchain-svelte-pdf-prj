@@ -24,7 +24,6 @@ def build_chat(chat_args: ChatArgs):
     retriever_name, retriever = select_component("retriever", retriever_map, chat_args)
     llm_name, llm = select_component("llm", llm_map, chat_args)
     memory_name, memory = select_component("memory", memory_map, chat_args)
-    print(f"Selected components: {llm_name}, {retriever_name}, {memory_name}")
     set_conversation_components(
         chat_args.conversation_id,
         llm=llm_name,

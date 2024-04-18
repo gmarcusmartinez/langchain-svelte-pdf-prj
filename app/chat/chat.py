@@ -6,7 +6,6 @@ from app.chat.memories import memory_map
 from app.chat.score import random_component_by_score
 from langchain.chat_models import ChatOpenAI
 from app.web.api import set_conversation_components, get_conversation_components
-import random
 
 
 def select_component(component_type, component_map, chat_args):
@@ -39,4 +38,5 @@ def build_chat(chat_args: ChatArgs):
         condense_question_llm=condense_question_llm,
         memory=memory,
         retriever=retriever,
+        metadata=chat_args.metadata,
     )
